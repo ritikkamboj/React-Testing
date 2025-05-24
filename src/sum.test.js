@@ -6,7 +6,7 @@ test("testing for sum function", () => {
 })
 
 
-test("testing for sum function 2", () => {
+test(" 123 testing for sum function 2", () => {
     let a = 100, b = 200, output = 300
     expect(sum(a, b)).toBe(output)
 })
