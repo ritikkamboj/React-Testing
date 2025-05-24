@@ -1,7 +1,12 @@
-import { render } from "@testing-library/react";
-import App from "./App";
+import Users from "./Users";
+// import { render } from "@testing-library/react";
+import renderer from "react-test-renderer"
 
-test("snapshot for app componenet file ", () => {
-  let box = render(<App />);
-  expect(box).toMatchSnapshot()
+test("class compoentn method testing", () => {
+
+  const testRenderer = renderer.create(<Users />, { unstable_isConcurrent: false });
+  const compData = testRenderer.getInstance();
+  console.log("jai shree ram 🌺:", compData);
+  expect(compData.getUserList()).toMatch("user list");
+
 })
