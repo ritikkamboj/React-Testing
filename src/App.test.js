@@ -1,12 +1,15 @@
-import Users from "./Users";
-// import { render } from "@testing-library/react";
-import renderer from "react-test-renderer"
+import { fireEvent, render, screen } from "@testing-library/react"
+import App from "./App"
+import handleOtherMethod from "./helper";
 
-test("class compoentn method testing", () => {
 
-  const testRenderer = renderer.create(<Users />, { unstable_isConcurrent: false });
-  const compData = testRenderer.getInstance();
-  console.log("jai shree ram 🌺:", compData);
-  expect(compData.getUserList()).toMatch("user list");
+test("method testing case 1 ", () => {
+  render(<App />);
+  const btn = screen.getByTestId("btn1");
+  fireEvent.click(btn)
+  expect(screen.getByText("hello")).toBeInTheDocument();
+})
 
+test("method testing case 2", () => {
+  expect(handleOtherMethod()).toMatch("hi")
 })
