@@ -6,6 +6,8 @@ function App() {
     <div className="App">
       <p>First react test case123</p>
       <p>Ritik kamboj</p>
+
+      <input type="text" placeholder='Enter username' name='username' id='userid' value="aashu" />
       <img title='Any image deatils' src="https://cdn.pixabay.com/photo/2015/09/16/08/55/online-942406_1280.jpg" alt="" />
     </div>
   );
