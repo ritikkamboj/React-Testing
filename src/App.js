@@ -7,8 +7,9 @@ function App() {
   const [data, setData] = useState("");
   return (
     <div className="App">
-      <h1>On change event with input text </h1>
-      <input type="text" value={data} onChange={(e) => setData(e.target.value + "test")} />
+      <h1>Testing of click event on button</h1>
+      <button onClick={() => setData("updated data")}>Update data</button>
+      <h1>{data}</h1>
     </div>
   );
 }
