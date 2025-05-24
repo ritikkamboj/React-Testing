@@ -25,3 +25,47 @@ test("Testing of input box", () => {
   expect(checkInput).toHaveAttribute("value", "aashu")
 })
 
+describe.skip("UI test case group", () => {
+
+  test("test case 1 ", () => {
+    render(<App />);
+    let checkInput = screen.getByRole("textbox")
+    expect(checkInput).toHaveAttribute("name", "username")
+  })
+  test("test case 2 ", () => {
+    render(<App />);
+    let checkInput = screen.getByRole("textbox")
+    expect(checkInput).toHaveAttribute("name", "username")
+  })
+  test("test case 3 ", () => {
+    render(<App />);
+    let checkInput = screen.getByRole("textbox")
+    expect(checkInput).toHaveAttribute("name", "username")
+  })
+})
+
+describe("API test case", () => {
+
+  test("API test case1", () => {
+    render(<App />);
+    let checkInput = screen.getByRole("textbox")
+    expect(checkInput).toHaveAttribute("name", "username")
+  })
+  test("API test case 2", () => {
+    render(<App />);
+    let checkInput = screen.getByRole("textbox")
+    expect(checkInput).toHaveAttribute("name", "username")
+  })
+  test("API test case 3", () => {
+    render(<App />);
+    let checkInput = screen.getByRole("textbox")
+    expect(checkInput).toHaveAttribute("name", "username")
+  })
+  describe("Inner describe or nested describe", () => {
+    test("API test case shree", () => {
+      render(<App />);
+      let checkInput = screen.getByRole("textbox")
+      expect(checkInput).toHaveAttribute("name", "username")
+    })
+  })
+})
