@@ -1,22 +1,18 @@
 const { render, screen } = require("@testing-library/react")
 import App from "./App"
 
-
-test("test getAllByRole", () => {
+test("getByLabelText", () => {
   render(<App />)
-
-  const buttons = screen.getAllByRole("button");
-  const options = screen.getAllByRole("option")
-  // expect(buttons).toBeInTheDocument();
-  for (let i = 0; i < buttons.length; i++) {
-    expect(buttons[i]).toBeInTheDocument();
+  const input = screen.getByLabelText("username")
+  expect(input).toBeInTheDocument();
+  expect(input).toHaveValue("aashu")
+})
 
 
-  }
-  for (let i = 0; i < options.length; i++) {
-    expect(options[i]).toBeInTheDocument();
 
-
-  }
+test("getByLabelText 2", () => {
+  render(<App />)
+  const checkbox = screen.getByLabelText("skills")
+  expect(checkbox).toBeInTheDocument()
 
 })

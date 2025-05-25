@@ -12,15 +12,13 @@ function App() {
 
   return (
     <div className="App">
-      <h1>getAllByRole</h1>
-      <button>Click Me</button>
-      <button>Click Me</button>
+      <h1>getByLableText</h1>
+      <label htmlFor="user-name">username</label>
+      <input type="text" id='user-name' defaultValue="aashu" />
 
-      <select name="" id="">
-        <option value="">1</option>
-        <option value="">2</option>
-        <option value="">3</option>
-      </select>
+
+      <label htmlFor="skills">skills</label>
+      <input type="checkbox" id='skills' />
 
 
     </div>
