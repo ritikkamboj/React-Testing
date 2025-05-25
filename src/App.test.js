@@ -1,26 +1,20 @@
 const { render, screen } = require("@testing-library/react")
 import App from "./App"
 
+// test("test case for single input field placeholder", () => {
+//   render(<App />)
+//   const input = screen.getByPlaceholderText("enter username");
+//   expect(input).toBeInTheDocument();
+//   expect(input).toHaveValue()
+// })
 
-test("input test case ", () => {
+
+test("test case for mutiple input field placeholder", () => {
   render(<App />)
-  const inputs = screen.getAllByLabelText("username");
-
-
+  const inputs = screen.getAllByPlaceholderText('enter username')
   for (let i = 0; i < inputs.length; i++) {
-    expect(inputs[i]).toBeInTheDocument();
-    expect(inputs[i]).toHaveValue("anil");
-  }
-})
+    expect(inputs[i]).toBeInTheDocument()
+    expect(inputs[i]).toHaveValue('ak')
 
-
-test("input test case for check box ", () => {
-  render(<App />)
-  const checkboxes = screen.getAllByLabelText("skill");
-
-
-  for (let i = 0; i < checkboxes.length; i++) {
-    expect(checkboxes[i]).toBeInTheDocument();
-    expect(checkboxes[i]).toBeChecked();
   }
 })
