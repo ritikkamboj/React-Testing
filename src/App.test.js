@@ -1,20 +1,33 @@
 const { render, screen } = require("@testing-library/react")
 import App from "./App"
 
-// test("test case for single input field placeholder", () => {
+test("single button testing", () => {
+  render(<App />)
+  const btn = screen.getByText("login")
+  expect(btn).toBeInTheDocument();
+})
+
+
+test("single p tag testing ", () => {
+  render(<App />)
+  const tag = screen.getByText("p tag testing")
+  expect(tag).toBeInTheDocument();
+})
+
+// test("single heading tag testing ", () => {
 //   render(<App />)
-//   const input = screen.getByPlaceholderText("enter username");
-//   expect(input).toBeInTheDocument();
-//   expect(input).toHaveValue()
+//   const tag = screen.getByText("heading")
+//   expect(tag).toBeInTheDocument();
 // })
 
 
-test("test case for mutiple input field placeholder", () => {
-  render(<App />)
-  const inputs = screen.getAllByPlaceholderText('enter username')
-  for (let i = 0; i < inputs.length; i++) {
-    expect(inputs[i]).toBeInTheDocument()
-    expect(inputs[i]).toHaveValue('ak')
+// we check class on by using  "toHaveClass()" toHaveAttribute
 
+test("multiple heading tag testing ", () => {
+  render(<App />)
+  const tag = screen.getAllByText("heading")
+  for (let i = 0; i < tag.length; i++) {
+    expect(tag[i]).toBeInTheDocument();
   }
+
 })

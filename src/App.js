@@ -12,10 +12,11 @@ function App() {
 
   return (
     <div className="App">
-      <h1>ByPlaceHolderText</h1>
-      <input type="text" placeholder='enter username' defaultValue='ak' />
-      <input type="text" placeholder='enter username' defaultValue='ak' />
-
+      <h1>getByText and getAllByText</h1>
+      <button>login</button>
+      <p>p tag testing</p>
+      <h1>heading</h1>
+      <h1>heading</h1>
     </div>
   );
 }
