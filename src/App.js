@@ -12,16 +12,15 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Mutiple items with Role</h1>
-      <h1>Custom Role </h1>
-      <button>Click 1</button>
-      <button>Click 2</button>
-      <label htmlFor="input1">User Name</label>
-      <input type="text" id='input1' />
-      <label htmlFor="input2">User Age</label>
-      <input type="text" id='input2' />
-      <div role='dummy'>Dummy Text </div>
+      <h1>getAllByRole</h1>
+      <button>Click Me</button>
+      <button>Click Me</button>
 
+      <select name="" id="">
+        <option value="">1</option>
+        <option value="">2</option>
+        <option value="">3</option>
+      </select>
 
 
     </div>

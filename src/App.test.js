@@ -1,16 +1,22 @@
-const { render, screen } = require("@testing-library/react");
+const { render, screen } = require("@testing-library/react")
 import App from "./App"
 
-test("getByRole Testing", () => {
+
+test("test getAllByRole", () => {
   render(<App />)
-  const btn1 = screen.getByRole("button", { name: "Click 1" });
-  const btn2 = screen.getByRole("button", { name: "Click 2" });
-  const input1 = screen.getByRole("textbox", { name: "User Name" });
-  const input2 = screen.getByRole("textbox", { name: "User Age" });
-  const div1 = screen.getByRole("dummy");
-  expect(div1).toBeInTheDocument()
-  expect(btn1).toBeInTheDocument();
-  expect(btn2).toBeInTheDocument();
-  expect(input1).toBeInTheDocument();
-  expect(input2).toBeInTheDocument();
+
+  const buttons = screen.getAllByRole("button");
+  const options = screen.getAllByRole("option")
+  // expect(buttons).toBeInTheDocument();
+  for (let i = 0; i < buttons.length; i++) {
+    expect(buttons[i]).toBeInTheDocument();
+
+
+  }
+  for (let i = 0; i < options.length; i++) {
+    expect(options[i]).toBeInTheDocument();
+
+
+  }
+
 })
