@@ -12,11 +12,15 @@ function App() {
 
   return (
     <div className="App">
-      <h1>getByText and getAllByText</h1>
-      <button>login</button>
-      <p>p tag testing</p>
-      <h1>heading</h1>
-      <h1>heading</h1>
+      <h1>getBytestId and getAllByTextId </h1>
+      <div data-testid="div-test-id">
+        Testing with test id method div1
+      </div>
+      <div data-testid="div-test-id">
+        Testing with test id method div2
+      </div>
+      <h2 data-testid="h2-test-id">h2 tag testing </h2>
+
     </div>
   );
 }
