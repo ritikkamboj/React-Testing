@@ -10,10 +10,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>findBy and findAllBy</h1>
-      {
-        data ? <h1>data found</h1> : <h1>No data found</h1>
-      }
+      <h1 id='testId'>hello world</h1>
     </div>
 
   );
