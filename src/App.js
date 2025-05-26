@@ -5,7 +5,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>TextMatch and string and regex</h1>
+      <h1>TextMatch and function</h1>
       <div>Hello World</div>
 
 
