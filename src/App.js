@@ -5,9 +5,13 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Overriding data test </h1>
-      <div element-id="test-div" data-testid="test-div">Dummy Test</div>
+      <h1>getByDisplayValue and getAllByDisplayValue</h1>
+      <input type="text" defaultValue="aashu" />
+      <input type="text" defaultValue="aashu" />
 
+      <textarea defaultValue="aashu1" />
+
+      <input type="radio" defaultValue="male" />
     </div>
   );
 }
