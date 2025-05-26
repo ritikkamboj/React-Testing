@@ -3,15 +3,18 @@ import './App.css';
 
 function App() {
 
-  const [data, setData] = useState(false)
-  useEffect(() => {
-    setTimeout(() => setData(true))
-  }, 2000)
-
   return (
     <div className="App">
-      <h1 id='testId'>hello world</h1>
+      <div>
+        hello world
+        <p>hi</p>
+        <p>hello</p>
+        <p>hey</p>
+      </div>
+
+
     </div>
+
 
   );
 }
