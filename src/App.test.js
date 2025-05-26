@@ -1,9 +1,9 @@
 const { render, screen } = require("@testing-library/react")
+
 import App from "./App"
 
-test("query by test case", () => {
+test("test element with find by", async () => {
   render(<App />)
-  // const div = screen.getByText("login");
-  const div = screen.queryByText("login")  // thiis check that code is present in the document 
-  expect(div).not.toBeInTheDocument();
+  const el = await screen.findByText("data found", {}, { timeout: 4000 });
+  expect(el).toBeInTheDocument();
 })
