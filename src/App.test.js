@@ -1,20 +1,12 @@
-const { render, screen } = require("@testing-library/react")
+const { render, screen, configure } = require("@testing-library/react")
 import App from "./App"
+configure({ testIdAttribute: "element-id" })
 
-test("testing on the basis of testId", () => {
 
+
+test("test div with data test id ", () => {
   render(<App />)
-  const div = screen.getAllByTestId("div-test-id")
-  for (let i = 0; i < div.length; i++) {
-    expect(div[i]).toBeInTheDocument();
-
-  }
-})
-
-test("testing on the basis of testId for h2", () => {
-
-  render(<App />)
-  const h2 = screen.getByTestId("h2-test-id")
-  expect(h2).toBeInTheDocument();
+  const div = screen.getByTestId("test-div")
+  expect(div).toBeInTheDocument();
 
 })
