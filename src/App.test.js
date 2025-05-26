@@ -1,18 +1,26 @@
-const { render, screen } = require("@testing-library/react")
+const { render, screen } = require("@testing-library/react");
 import App from "./App"
 
-// test("testing of image tag  with Alt", () => {
-//   render(<App />)
-//   const btn = screen.getByAltText("dummy image");
-//   expect(btn).toBeInTheDocument();
-// })
-
-
-test("testing of span tag", () => {
+test("test input ", () => {
   render(<App />)
-  const span = screen.getAllByAltText("dummy image");
+  const input = screen.getByRole("textbox");
+  expect(input).toBeInTheDocument();
+  expect(input).toHaveValue("aashu");
+  expect(input).toBeEnabled();
 
-  for (let i = 0; i < span.length; i++) {
-    expect(span[i]).toBeInTheDocument();
-  }
+  // expect(input).toBeDisabled();
+  expect(input).toHaveAttribute("id");
+  expect(input).toHaveAttribute("data-test");
+  expect(input).toHaveClass("test-style");
+  expect(input).toHaveClass("dummy");
+
+})
+
+test("test negetive cases", () => {
+  render(<App />);
+  const btn = screen.getByRole("button");
+  expect(btn).toBeInTheDocument()
+  expect(btn).not.toHaveClass('btn')
+  expect(btn).not.toHaveAttribute('id')
+
 })
