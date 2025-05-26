@@ -1,25 +1,18 @@
 const { render, screen } = require("@testing-library/react")
 import App from "./App"
 
-// test("testing by display Value ", () => {
-//   render(<App />)
-//   const input = screen.getByDisplayValue("aashu");
-//   expect(input).toBeInTheDocument()
-// })
-
-
-test("testing by testarea  Value ", () => {
+test("testing of button with title", () => {
   render(<App />)
-  const textarea = screen.getAllByDisplayValue("aashu");
-
-  // we can check the all values by using array 
-
-  expect(textarea[0]).toBeInTheDocument()
+  const btn = screen.getByTitle("click");
+  expect(btn).toBeInTheDocument();
 })
 
 
-test("testing by radio  Value ", () => {
+test("testing of span tag", () => {
   render(<App />)
-  const radio = screen.getByDisplayValue("male");
-  expect(radio).toBeInTheDocument()
+  const span = screen.getAllByTitle("spade");
+
+  for (let i = 0; i < span.length; i++) {
+    expect(span[i]).toBeInTheDocument();
+  }
 })
