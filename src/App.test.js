@@ -1,4 +1,4 @@
-import { prettyDOM, render, screen } from "@testing-library/react"
+import { prettyDOM, render, screen, logRoles } from "@testing-library/react"
 import App from "./App"
 
 test("testing component", () => {
@@ -6,7 +6,8 @@ test("testing component", () => {
   // const el = screen.getByText("heading 2")
   // expect(el).toBeInTheDocument();
   // console.log(prettyDOM(container))
-  debug();
+  // debug();
+  logRoles(container)
 
 
 
