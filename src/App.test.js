@@ -6,7 +6,8 @@ test("testing component", () => {
   // const el = screen.getByText("heading 2")
   // expect(el).toBeInTheDocument();
   // console.log(prettyDOM(container))
-  debug()
+  debug();
+
 
 
 })
