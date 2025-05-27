@@ -2,15 +2,13 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import User from './User';
 
-function App() {
+function App(props) {
   const [data, setData] = useState("")
 
   return (
     <div className="App">
-      <h1>Props Testing </h1>
-
-      <User name="kamboj" />
-
+      <h1>functional props testing</h1>
+      <button onClick={props.testFunc}>click</button>
     </div>
 
 

@@ -1,9 +1,14 @@
-import { render, screen } from "@testing-library/react"
-import User from "./User"
+import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
+import App from "./App"
 
 
-test("testing of props in component", () => {
-  render(<User name="aashu" />)
-  const user = screen.getByText("aashu");
-  expect(user).toBeInTheDocument();
+test("functional props testing", async () => {
+  const testFunc = jest.fn();
+  userEvent.setup();
+  render(<App testFunc={testFunc} />)
+  const btn = screen.getByRole("button");
+  await userEvent.click(btn);
+  expect(testFunc).toBeCalled();
+
 })
