@@ -1,15 +1,9 @@
-const { render, screen } = require("@testing-library/react")
-import userEvent from "@testing-library/user-event"
-import App from "./App"
-import { act } from "react";
+import { render, screen } from "@testing-library/react"
+import User from "./User"
 
-test("on change event testing", async () => {
-  userEvent.setup();
-  render(<App />)
-  const el = screen.getByRole("textbox");
-  await act(async () => {
-    await userEvent.type(el, "aashu");
-  })
-  expect(screen.getByText("aashu")).toBeInTheDocument();
 
+test("testing of props in component", () => {
+  render(<User name="aashu" />)
+  const user = screen.getByText("aashu");
+  expect(user).toBeInTheDocument();
 })
