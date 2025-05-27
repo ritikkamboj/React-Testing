@@ -1,12 +1,11 @@
-const { render, screen, within } = require("@testing-library/react")
-import App from './App'
+const { render, screen } = require("@testing-library/react");
+const { default: userEvent } = require("@testing-library/user-event")
+import App from "./App"
 
-test("test with within function", () => {
+test("click event with user event library", async () => {
+  userEvent.setup();
   render(<App />)
-  const ele = screen.getByText('hello world');
-  let subel = within(ele).getByText("hi")
-
-  expect(ele).toBeInTheDocument();
-  expect(subel).toBeInTheDocument()
-
+  const btn = screen.getByText("click me")
+  await userEvent.click(btn);
+  expect(screen.getByText("hello")).toBeInTheDocument();
 })
