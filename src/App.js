@@ -3,13 +3,29 @@ import './App.css';
 import User from './User';
 
 function App(props) {
-  const [data, setData] = useState(0)
+  const [data, setData] = useState([])
 
+  useEffect(() => {
+    getData()
+
+
+  }, [])
+
+
+  const getData = async () => {
+    let results = await fetch("https://jsonplaceholder.typicode.com/users");
+    let data = await results.json();
+    setData(data)
+
+  }
+  console.log(data)
   return (
     <div className="App">
-      <h2>heading 2</h2>
-      <h5>heading 5</h5>
-      <button onClick={() => setData(data => data + 1)}>Click to increase count : {data}</button>
+      <h1>API Calls</h1>
+      <h2>List of users</h2>
+      {
+        data.map((item) => <li key={item.id}>{item.name}</li>)
+      }
     </div>
 
 
