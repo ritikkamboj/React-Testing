@@ -21,7 +21,7 @@ function App(props) {
   console.log(data)
   return (
     <div className="App">
-      <h1>API Calls</h1>
+      {/* <h1>API Calls</h1> */}
       <h2>List of users</h2>
       {
         data.map((item) => <li key={item.id}>{item.name}</li>)
