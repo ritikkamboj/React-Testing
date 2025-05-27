@@ -6,8 +6,10 @@ function App() {
 
   return (
     <div className="App">
-      <h1>{data}</h1>
-      <button onClick={() => setData("hello")}>click me</button>
+
+      <h1>onChnage event testing</h1>
+      <h2>{data}</h2>
+      <input type="text" placeholder='enter name' onChange={(e) => setData(e.target.value)} />
 
     </div>
 
