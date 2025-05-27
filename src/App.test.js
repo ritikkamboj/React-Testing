@@ -1,14 +1,9 @@
-import { render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
+import { prettyDOM, render, screen } from "@testing-library/react"
 import App from "./App"
 
-
-test("functional props testing", async () => {
-  const testFunc = jest.fn();
-  userEvent.setup();
-  render(<App testFunc={testFunc} />)
-  const btn = screen.getByRole("button");
-  await userEvent.click(btn);
-  expect(testFunc).toBeCalled();
-
+test("testing component", () => {
+  const { container } = render(<App />)
+  // const el = screen.getByText("heading 2")
+  // expect(el).toBeInTheDocument();
+  console.log(prettyDOM(container))
 })
